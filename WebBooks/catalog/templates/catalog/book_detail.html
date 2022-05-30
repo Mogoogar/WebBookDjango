@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+{% block content %}
+    <h1>Название книги: {{ book_title }}</h1>
+    <p><strong>Жанр:</strong>{{ book.genre}}</p>
+    <p><strong>Аннотация::</strong>{{ book.summary}}</p>
+    <p><strong>ISBN:</strong>{{ book.isbn}}</p>
+    <p><strong>Язык:</strong>{{ book.language}}</p>
+        {% for author in book.author.all %}}
+            <p><strong>Автор:</strong>
+                <a href="">{{ author.first_name }}
+                           {{ author.last_name}}</a> </p>
+        {% endfor %}
+{% endblock %}
+<p><strong>Автор:</strong><a href="">{{ author.first_name}}
+{{ author.last_name}}</a> </p>
